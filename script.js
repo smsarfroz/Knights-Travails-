@@ -98,11 +98,20 @@ const knightMoves = (start, end) => {
     }
     path.push(start);
 
-    while (path.length) {
-        let move = path.pop();
-        console.log(`[${move[0]},${move[1]}]`);
+    path.reverse();
+
+    let result = ``;
+    for (let i = 0; i < path.length; ++i) {
+        result += `[${path[i][0]},${path[i][1]}] \n`;
     }
+    return result;
+    // return path;
+    // while (path.length) {
+    //     let move = path.pop();
+    //     console.log(`[${move[0]},${move[1]}]`);
+    // }
   }
 };
 
-knightMoves([3,3],[3,3]);
+let path = knightMoves([7,7],[0,0]);
+console.log(path);
