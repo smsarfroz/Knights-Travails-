@@ -87,8 +87,8 @@ const knightMoves = (start, end) => {
     let cur = end;
     let path = [];
     while (cur != start) {    
-        cur = parent[cur[0]][cur[1]];
         path.push(cur);
+        cur = parent[cur[0]][cur[1]];
     }
     path.push(start);
 
@@ -99,4 +99,4 @@ const knightMoves = (start, end) => {
   }
 };
 
-knightMoves([3, 3], [6, 6]);
+knightMoves([0,0],[3,3]);
