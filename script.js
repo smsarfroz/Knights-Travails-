@@ -29,6 +29,9 @@ const makeVertex = (x, y) => {
   vert[1] = y;
   return vert;
 };
+const areVerticesEqual = (v1, v2) => {
+    return (v1[0] === v2[0] && v1[1] === v2[1]);
+};
 const knightMoves = (start, end) => {
   let queue = [];
   const visited = make2DArray(chessboardSize, 0);
@@ -88,6 +91,9 @@ const knightMoves = (start, end) => {
     let path = [];
     while (cur != start) {    
         path.push(cur);
+        if (areVerticesEqual(cur, start)) {
+            break;
+        }
         cur = parent[cur[0]][cur[1]];
     }
     path.push(start);
@@ -99,4 +105,4 @@ const knightMoves = (start, end) => {
   }
 };
 
-knightMoves([0,0],[3,3]);
+knightMoves([3,3],[3,3]);
